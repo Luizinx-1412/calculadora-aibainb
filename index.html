@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form action="#">
+                <fieldset>
+                    <legend>
+                        Calculadora AirBnb
+                    </legend>
+                    <p>
+                        <label for="preco">Preço:</label>
+
+                        <input type="number" id="preco">
+
+                    </p>
+                    <p>
+                        <label for="qtdDiarias">Quantidades de diarias:</label>
+
+                        <input type="number" id="qtdDiarias">
+                    </p>
+                    <p>
+                        <label for="taxaLimpeza">Taxa de limpeza</label>
+
+                        <input type="number" id="taxaLimpeza">
+                    </p>
+                    <p>
+                        <input type="button" value="Enviar" id="btnEnviar">
+
+                        <input type="reset" value="Limpar" id="btn-limpar">
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <div id="mensagem">
+
+            </div>
+        </section>
+    </main>
+    <script>
+        let btnEnviar = document.getElementById("btnEnviar");
+        btnEnviar.addEventListener("click", function (e) {
+           let preco = document.getElementById("preco").value;
+           let qtdDiarias = document.getElementById("qtdDiarias").value;
+           let taxaLimpeza = document.getElementById("taxaLimpeza").value;
+           let valor = preco * qtdDiarias + parseFloat(taxaLimpeza);
+           console.log(valor);
+
+           let mensagem = document.getElementById("mensagem");
+           mensagem.innerHTML = "Sua hospedagem custara R$ "+ valor.toFixed(2)
+        });
+
+    </script>
+</body>
+
+</html>
